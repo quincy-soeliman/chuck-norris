@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chuckApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuck Norris</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://bootswatch.com/lumen/bootstrap.min.css">
+
+  <!-- Scripts -->
+  <script src="node_modules/angular/angular.min.js"></script>
+</head>
+<body>
+  <div class="container" ng-controller="chuckController">
+    <div class="row">
+      <h1>Chuck Norris</h1>
+    </div>
+
+    <div class="row">
+      <h3>{{ joke }}</h3>
+    </div>
+
+    <div class="row">
+      <form name="personForm" ng-submit="getRandomJoke(person.firstName, person.lastName)" novalidate>
+        <div class="form-group">
+          <label for="firstName">First name:</label>
+          <input type="text" name="firstName" ng-model="person.firstName" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last name:</label>
+          <input type="text" name="lastName" ng-model="person.lastName" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
