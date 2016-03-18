@@ -6,7 +6,7 @@ angular
     var chuckFactory = {};
 
     chuckFactory.getRandomJoke = function(firstName, lastName) {
-      return $http.get(urlBase + '/random?firstName=' + firstName + '&lastName=' + lastName);
+      return $http.jsonp(urlBase + '/random?callback=JSON_CALLBACK&firstName=' + firstName + '&lastName=' + lastName);
     };
 
     return chuckFactory;
